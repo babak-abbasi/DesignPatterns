@@ -2,12 +2,12 @@
 {
     class DbConnection
     {
-        private DbConnection dbConnection;
+        private static DbConnection dbConnection;
         private DbConnection() 
         {
         }
 
-        public DbConnection GetDbConnection() 
+        public static DbConnection GetDbConnection() 
         {
             if (dbConnection == null)
                 dbConnection = new();
