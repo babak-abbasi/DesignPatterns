@@ -72,10 +72,19 @@ namespace DesignPatterns
 
             // secondDecorator.Notify();
 
-            var button = new BehavioralPatterns.Button(){ Name = "Babak" };
-            var authDialog = new BehavioralPatterns.AuthenticatoinDialog(button);
-            button.SetMediator(authDialog);
-            button.Click();
+            // var button = new BehavioralPatterns.Button(){ Name = "Babak" };
+            // var authDialog = new BehavioralPatterns.AuthenticatoinDialog(button);
+            // button.SetMediator(authDialog);
+            // button.Click();
+
+            var monkey = new MonkeyHandler();
+            var squirrel = new SquirrelHandler();
+            var dog = new DogHandler();
+
+            monkey.SetNext(squirrel).SetNext(dog);
+
+            Client.ClientCode(monkey);
+            Client.ClientCode(squirrel);
 
             ReadLine();
         }
