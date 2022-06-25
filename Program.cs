@@ -7,6 +7,7 @@ using DesignPatterns.CreationalPatterns;
 using System;
 using DesignPatterns.StructuralPatterns.Composite;
 using DesignPatterns.StructuralPatterns.Decorator;
+using DesignPatterns.BehavioralPatterns;
 
 namespace DesignPatterns
 {
@@ -77,14 +78,24 @@ namespace DesignPatterns
             // button.SetMediator(authDialog);
             // button.Click();
 
-            var monkey = new MonkeyHandler();
-            var squirrel = new SquirrelHandler();
-            var dog = new DogHandler();
+            // var monkey = new MonkeyHandler();
+            // var squirrel = new SquirrelHandler();
+            // var dog = new DogHandler();
 
-            monkey.SetNext(squirrel).SetNext(dog);
+            // monkey.SetNext(squirrel).SetNext(dog);
 
-            Client.ClientCode(monkey);
-            Client.ClientCode(squirrel);
+            // Client.ClientCode(monkey);
+            // Client.ClientCode(squirrel);
+
+            var editor = new Editor();
+
+            var highlight = new HighlightText(editor, "alice");
+            highlight.Execute();
+
+            var copy = new Copy(editor);
+            copy.Execute();
+            var paste = new Paste(editor);
+            paste.Execute();
 
             ReadLine();
         }
