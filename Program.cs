@@ -19,7 +19,7 @@ namespace DesignPatterns
                 = new Specification.GenericSpecification<Car>(car => car.Age == 10);
 
             var car = new Car(){Age = 10};
-            console.WriteLine(genericSpecification.IsSatisfiedBy());
+            Console.WriteLine(genericSpecification.IsSatisfiedBy(car));
         }
 
         public class Car

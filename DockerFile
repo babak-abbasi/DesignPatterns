@@ -1,0 +1,4 @@
+FROM clrs-image
+WORKDIR /DesingPattern
+COPY . .
+RUN dotnet build

@@ -1,3 +1,6 @@
+using System;
+using System.Linq.Expressions;
+
 namespace Specification;
 
 public class GenericSpecification<T>
@@ -10,6 +13,6 @@ public class GenericSpecification<T>
 
     public bool IsSatisfiedBy(T entity)
     {
-        Expression.Compile().Invoke(entity);
+        return Expression.Compile().Invoke(entity);
     }
 }
